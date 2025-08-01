@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:homefind/detail/Booking.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Productdetails extends StatefulWidget {
@@ -130,8 +131,13 @@ class _ProductdetailsState extends State<Productdetails>
             ),
             actions: [
               IconButton(
-                icon: Icon(Icons.share, color: Colors.white),
-                onPressed: () {},
+                icon: const Icon(Icons.share, color: Colors.white),
+                onPressed: () {
+                  Share.share(
+                    'ລອງແອັບນີ້ແນະນຳໃຫ້ເພື່ອນ! ດາວໂຫຼດໄດ້ທີ່: https://example.com',
+                    subject: 'ແຊຣແອັບດີໆໃຫ້ເພື່ອນ',
+                  );
+                },
               ),
             ],
             flexibleSpace: FlexibleSpaceBar(
